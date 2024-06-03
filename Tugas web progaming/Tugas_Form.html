@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Data</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+      body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        min-height: 100vh;
+        background: url(https://i.pinimg.com/originals/ee/e0/c1/eee0c1dc806da44930fc6eb26b94a737.gif)
+          no-repeat;
+        background-size: cover;
+      }
+      .container {
+        width: 450px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        color: white;
+        padding: 30px 40px;
+        border-radius: 10px;
+        backdrop-filter: blur(30px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 40px;
+      }
+      .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 36px;
+      }
+      .container .form-group {
+        width: 100%;
+        height: 60px;
+        margin: 30px 0;
+        position: relative;
+      }
+      .form-group input,
+      .form-group select {
+        background: transparent;
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        border: 2px solid white;
+        color: white;
+        padding: 20px 45px 20px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+      }
+      .form-group input::placeholder {
+        color: white;
+      }
+      .form-group select option {
+        background: #333;
+        color: white;
+      }
+      .form-group i {
+        position: absolute;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 25px;
+        top: 50%;
+      }
+      .container .btn {
+        width: 100%;
+        height: 50px;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        color: #333;
+        margin: 10px 0;
+      }
+      .container .btn:hover {
+        background-color: lightskyblue;
+        color: white;
+        transition: all 0.5s ease-in-out;
+      }
+      .display-container {
+        background: rgba(255, 255, 255, 0.8);
+        color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .display-container p {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .display-container strong {
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Form Data</h2>
+      <form id="dataForm">
+        <div class="form-group">
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Nama"
+            required
+          />
+          <i class="bx bx-user"></i>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="alamat"
+            name="alamat"
+            placeholder="Alamat"
+            required
+          />
+          <i class="bx bxs-home"></i>
+        </div>
+        <div class="form-group">
+          <select id="tempatLahir" name="tempatLahir" required>
+            <option value="" disabled selected>Tempat Lahir</option>
+            <option value="Jakarta">Jakarta</option>
+            <option value="Bandung">Bandung</option>
+            <option value="Surabaya">Surabaya</option>
+            <option value="Medan">Medan</option>
+            <option value="Semarang">Semarang</option>
+            <option value="Yogyakarta">Yogyakarta</option>
+            <option value="Makassar">Makassar</option>
+            <option value="Palembang">Palembang</option>
+            <option value="Denpasar">Denpasar</option>
+            <option value="Malang">Malang</option>
+            <option value="Bekasi">Bekasi</option>
+            <option value="Tangerang">Tangerang</option>
+            <option value="Depok">Depok</option>
+            <option value="Solo">Solo</option>
+            <option value="Balikpapan">Balikpapan</option>
+            <option value="Banjarmasin">Banjarmasin</option>
+            <option value="Pekanbaru">Pekanbaru</option>
+            <option value="Batam">Batam</option>
+            <option value="Padang">Padang</option>
+            <option value="Pontianak">Pontianak</option>
+            <option value="Samarinda">Samarinda</option>
+            <option value="Manado">Manado</option>
+            <option value="Palangkaraya">Palangkaraya</option>
+            <option value="Ambon">Ambon</option>
+            <option value="Jayapura">Jayapura</option>
+            <option value="Kendari">Kendari</option>
+            <!-- Tambahkan lebih banyak kota sesuai kebutuhan -->
+          </select>
+          <i class="bx bxs-city"></i>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            id="tglLahir"
+            name="tglLahir"
+            placeholder="Tanggal Lahir"
+            required
+          />
+          <i class="bx bxs-calendar"></i>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" class="btn" id="clearButton">Clear</button>
+      </form>
+
+      <h2>Tampilan Data</h2>
+      <div id="displayData" class="display-container"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Inisialisasi Datepicker pada input tanggal lahir
+        $("#tglLahir").datepicker({
+          dateFormat: "yy-mm-dd",
+        });
+
+        // Fungsi untuk menangani submit form
+        $("#dataForm").on("submit", function (event) {
+          // Mencegah form dari reload halaman saat submit
+          event.preventDefault();
+
+          // Ambil nilai dari input form
+          var nama = $("#nama").val();
+          var alamat = $("#alamat").val();
+          var tempatLahir = $("#tempatLahir").val();
+          var tglLahir = $("#tglLahir").val();
+
+          // Buat tampilan data yang akan ditampilkan
+          var displayData = `
+                    <p><strong>Nama:</strong> ${nama}</p>
+                    <p><strong>Alamat:</strong> ${alamat}</p>
+                    <p><strong>Tempat Lahir:</strong> ${tempatLahir}</p>
+                    <p><strong>Tanggal Lahir:</strong> ${tglLahir}</p>
+                `;
+
+          // Tampilkan data pada div displayData
+          $("#displayData").html(displayData);
+        });
+
+        // Fungsi untuk mengosongkan form dan tampilan data
+        $("#clearButton").on("click", function () {
+          // Reset form
+          $("#dataForm")[0].reset();
+
+          // Hapus data yang ditampilkan
+          $("#displayData").html("");
+        });
+      });
+    </script>
+  </body>
+</html>
